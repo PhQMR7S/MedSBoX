@@ -244,21 +244,54 @@ h1,h2{ font-weight: 900; letter-spacing: -.01em; }
 .footer-brand p{ color: var(--ink-soft); font-size: 13.5px; margin-top: 8px; max-width: 36ch; }
 .footer-social{ display: flex; gap: 12px; flex-wrap: wrap; }
 .social-btn{
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
   background: rgba(255,255,255,.45);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,.6);
   color: var(--brand-deep);
   text-decoration: none;
-  font-weight: 700; font-size: 13px;
-  padding: 10px 16px 10px 12px;
-  border-radius: 999px;
+  border-radius: 50%;
   box-shadow: 0 1px 0 rgba(255,255,255,.7) inset;
   transition: transform .15s ease, background .15s ease;
 }
-.social-btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
-.social-btn:hover{ background: rgba(255,255,255,.7); transform: translateY(-2px); }
+.social-btn svg{ width: 19px; height: 19px; flex-shrink: 0; }
+.social-btn:hover{ background: rgba(255,255,255,.7); transform: translateY(-2px) scale(1.06); }
 .footer-bottom{ text-align: center; color: var(--ink-soft); font-size: 13px; margin-top: 20px; }
+
+/* Modal brand — logo + social, bottom of the login/register card */
+.modal-brand{
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(12,27,36,.08);
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.modal-logo{
+  width: 56px; height: 56px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(8,61,68,.22), 0 1px 0 rgba(255,255,255,.6) inset;
+  animation: logo-float 4.5s ease-in-out infinite;
+}
+@keyframes logo-float{
+  0%, 100%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(-6px) rotate(-2deg); }
+}
+.modal-social{ display: flex; gap: 10px; }
+.modal-social a{
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.6);
+  color: var(--brand-deep);
+  transition: transform .15s ease, background .15s ease;
+}
+.modal-social a svg{ width: 17px; height: 17px; }
+.modal-social a:hover{ background: #fff; transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce){
+  .modal-logo{ animation: none; }
+}
 
 /* Auth modal — deepest glass layer in the whole UI */
 .modal-overlay{ position: fixed; inset: 0; background: rgba(8,25,32,.35); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
