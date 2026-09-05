@@ -36,14 +36,16 @@ body{
     linear-gradient(160deg, var(--bg-a), var(--bg-b));
   background-attachment: fixed;
   color: var(--ink);
-  font-family: 'Tajawal', sans-serif;
-  line-height: 1.6;
+  font-family: 'Almarai', sans-serif;
+  line-height: 1.7;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
 }
 
-h1,h2,.brand-name,.plan-price,.step-num{ font-family: 'Cairo', sans-serif; }
+h1,h2,.brand-name,.plan-price,.step-num,.btn,.kicker,.trust-item strong,.app-title,.auth-tab{ font-family: 'Cairo', sans-serif; }
+h1,h2{ font-weight: 900; letter-spacing: -.01em; }
+.plan-price bdi{ font-weight: 900; }
 
 .wrap{
   max-width: 1120px;
@@ -234,8 +236,29 @@ h1,h2,.brand-name,.plan-price,.step-num{ font-family: 'Cairo', sans-serif; }
 .plan-card p{ font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
 
 /* Footer */
-.site-footer{ display: flex; justify-content: space-between; align-items: center; padding: 26px 24px 50px; color: var(--ink-soft); font-size: 14px; }
-.site-footer a{ color: var(--brand-deep); text-decoration: none; font-weight: 700; }
+.site-footer-wrap{ padding: 20px 24px 56px; }
+.footer-top{
+  padding: 34px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.footer-brand p{ color: var(--ink-soft); font-size: 13.5px; margin-top: 8px; max-width: 36ch; }
+.footer-social{ display: flex; gap: 12px; flex-wrap: wrap; }
+.social-btn{
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.6);
+  color: var(--brand-deep);
+  text-decoration: none;
+  font-weight: 700; font-size: 13px;
+  padding: 10px 16px 10px 12px;
+  border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.7) inset;
+  transition: transform .15s ease, background .15s ease;
+}
+.social-btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
+.social-btn:hover{ background: rgba(255,255,255,.7); transform: translateY(-2px); }
+.footer-bottom{ text-align: center; color: var(--ink-soft); font-size: 13px; margin-top: 20px; }
 
 /* Auth modal — deepest glass layer in the whole UI */
 .modal-overlay{ position: fixed; inset: 0; background: rgba(8,25,32,.35); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
